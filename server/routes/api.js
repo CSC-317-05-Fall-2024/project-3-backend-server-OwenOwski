@@ -7,9 +7,9 @@ const router = express.Router();
 // Add routes here
 
 router.post('/restaurants', (req, res) => {
-    const catData = req.body;
+    const restaurantData = req.body;
     try {
-        const cat = createRestaurant(restaurantData);
+        const restaurant = createRestaurant(restaurantData);
         res.status(200).json(restaurant)
     } catch (error) {
         console.log(error)

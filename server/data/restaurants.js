@@ -34,11 +34,11 @@ let restaurants = [
     },
     {   
         id:4,
+        image: "/images/marysol.jpg",
         name: "Restaurant Name",
         add: "1234 Something Ave",
         add1:"Los Angeles, CA 12345",
-        num: "(123) 123 - 1234",
-        image: "/images/marysol.jpg"
+        num: "(123) 123 - 1234"
     },
     {   
         id:5,
@@ -96,9 +96,10 @@ const getRestaurant = (id) => {
 // Create a new restaurant entry
 const createRestaurant = (data) => {
     const newRestaurant = {
-        id: lastId(),
+        id: getNextId(),
         ...data
     }
+    console.log(newRestaurant);
     restaurants.push(newRestaurant);
     return newRestaurant;
 };

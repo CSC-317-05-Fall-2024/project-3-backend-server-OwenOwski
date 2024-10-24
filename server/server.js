@@ -35,20 +35,17 @@ app.get("/attractions",(req, resp) => {
 })
 
 app.get("/restaurants", (req, resp) => {
+    const restaurants = getRestaurants();
     resp.render("restaurants", {restaurants});
 });
 app.get("/newRest",(req, resp) => {
     resp.sendFile(path.join(__dirname, "public", 'newRest.html'));
 })
-app.get('/restaurants/:id', (req, res) => {
-    const restaurants = getRestaurants();
-    res.render('restaurants_list', {restaurants});
-})
 
 app.get('/restaurants/:id', (req, res) => {
     const id = parseInt(req.params.id);
     const restaurant = getRestaurant(id);
-    res.render('restaurant_detail', {restaurant});
+    res.render('restaurant-details', {restaurant});
 });
 
 
